@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 
+
 body {
     margin: 0;
     padding: 0;
@@ -9,13 +10,13 @@ body {
 
 #hud {
     position: fixed;
-    bottom: 30px;
-    left: 15px;
+    bottom: 2.78vh;
+    left: 0.78vw;
     color: white;
-    font-size: 14px;
+    font-size: 0.73vw;
     z-index: 1000;
     display: flex;
-    gap: 15px;
+    gap: 0.78vw;
     flex-direction: row;
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
@@ -27,9 +28,9 @@ body {
 
 .icon {
     position: relative;
-    font-size: 16px;
-    width: 30px;
-    height: 30px;
+    font-size: 0.83vw;
+    width: 1.56vw;
+    height: 1.56vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -37,7 +38,7 @@ body {
     border-radius: 50%;
     color: white;
     text-align: center;
-    margin-right: 8px;
+    margin-right: 0.42vw;
 }
 
 .icon::before {
@@ -70,38 +71,38 @@ body {
     color: rgb(255, 255, 255);
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
-    font-size: 13px;
+    font-size: 0.68vw;
     text-align: center;
-    width: 40px;
+    width: 2.08vw;
     letter-spacing: 0px;
 }
 
 .mic-icon {
     position: fixed;
-    bottom: 70px;
-    left: 35px;
-    font-size: 16px;
-    width: 60px;
-    height: 30px;
+    bottom: 6.48vh;
+    left: 1.82vw;
+    font-size: 0.83vw;
+    width: 3.13vw;
+    height: 1.56vw;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 14px;
+    border-radius: 0.73vw;
     color: white;
     text-align: center;
-    margin-right: 8px;
-    padding-left: 5px;
+    margin-right: 0.42vw;
+    padding-left: 0.26vw;
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .dot {
     display: inline-block;
-    width: 6px;
-    height: 6px;
+    width: 0.31vw;
+    height: 0.31vw;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.295);
-    margin: 0 2px;
+    margin: 0 0.10vw;
 }
 
 .dots-container {
@@ -139,24 +140,13 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-/* Nový kompas a lokace */
-
 #location-compass-wrapper {
     position: absolute;   
-    bottom: 192px;        
-    left: -290px;
+    bottom: 17.78vh;
+    left: -15.1vw;  
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 0.31vw; 
     z-index: 1000;
 }
 
@@ -170,16 +160,16 @@ body {
 
 #compass {
     width: auto;
-    min-width: 70px;
-    height: 10px;             
-    padding: 0 8px;
+    min-width: 3.65vw; 
+    height: 0.52vw;    
+    padding: 0 0.42vw; 
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 6px;
-    border-radius: 6px;
+    gap: 0.31vw;  
+    border-radius: 0.31vw; 
     color: white;
-    font-size: 14px;
+    font-size: 0.73vw;
     user-select: none;
     background-color: transparent;
     overflow: visible;       
@@ -188,14 +178,14 @@ body {
 
 #compass i {
     position: relative;
-    left: 0px;
-    width: 30px;
-    height: 30px;
+    left: 0;
+    width: 1.56vw;    
+    height: 1.56vw;   
     border-radius: 50%;
     background-color: rgba(36, 31, 31, 0.795);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 0.05vw solid rgba(255, 255, 255, 0.3);
     color: white;
-    font-size: 18px;
+    font-size: 0.94vw; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -208,42 +198,42 @@ body {
 #compass-direction {
     font-family: 'Russo One', sans-serif;
     color: white;
-    font-size: 16px;
-    margin-left: 4px;
+    font-size: 0.83vw; 
+    margin-left: 0.21vw; 
     user-select: none;
-    line-height: 30px;
+    line-height: 1.56vw;
     white-space: nowrap;
     background-color: transparent; 
 }
 
 #location {
     width: auto;  
-    height: 55px;
-    min-width: 150px; 
-    padding: 0 8px;
+    height: 5.09vh; 
+    min-width: 7.81vw; 
+    padding: 0 0.42vw; 
     display: flex;
     align-items: center;
-    gap: 8px;
-    border-radius: 6px;
+    gap: 0.42vw; 
+    border-radius: 0.31vw; 
     color: white;
-    font-size: 14px;
+    font-size: 0.73vw; 
     user-select: none;
 }
 
 #location i {
     position: relative;
-    left: 0px;
-    width: 30px;
-    height: 30px;
+    left: 0;
+    width: 1.56vw;     
+    height: 1.56vw;  
     border-radius: 50%;
     background-color: rgba(36, 31, 31, 0.795);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 0.05vw solid rgba(255, 255, 255, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
     color: white;
-    font-size: 18px;
+    font-size: 0.94vw; 
 }
 
 #location-text {
@@ -260,7 +250,7 @@ body {
 }
 
 #area-name {
-    font-size: 12px;
+    font-size: 0.63vw; 
     opacity: 0.7;
 }
 
@@ -274,10 +264,3 @@ body {
     }
 }
 
-/*
-<svg style="position: absolute; height: 0; width: 0;">
-  <filter id="smooth">
-    <feGaussianBlur in="SourceGraphic" stdDeviation="0.2"></feGaussianBlur>
-  </filter>
-</svg>
-*/
