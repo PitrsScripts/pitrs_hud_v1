@@ -4,6 +4,8 @@ pitrs_hud_v2 is a dynamic and immersive heads-up display system built for both E
 
 <img width="1917" height="403" alt="image" src="https://github.com/user-attachments/assets/649d8c4e-a104-46fb-9be1-90fb6f603960" />
 
+<img width="1141" height="19" alt="image" src="https://github.com/user-attachments/assets/376ebfd7-23fe-4124-96f0-f437c6e36703" />
+
 
 ### ✨ Features
 🧠 Live Player Status Sync
