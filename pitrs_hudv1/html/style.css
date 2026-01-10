@@ -1,0 +1,373 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins;
+    background: transparent;
+}
+
+#hud {
+    position: fixed;
+    bottom: 2.78vh;
+    left: 0.78vw;
+    color: white;
+    font-size: 0.73vw;
+    z-index: 1000;
+    display: flex;
+    gap: 0.78vw;
+    flex-direction: row;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.5s ease;
+}
+
+.bar {
+    display: flex;
+    align-items: center;
+    transition: transform 0.5s ease;
+}
+
+.icon {
+    position: relative;
+    font-size: 0.83vw;
+    width: 1.56vw;
+    height: 1.56vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.644);
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    margin-right: 0.42vw;
+}
+
+.icon::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 50%;
+    background: transparent;
+    background-image: conic-gradient(
+        var(--progress-color) var(--progress),
+        transparent var(--progress)
+    );
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    padding: 2px;
+    transition: background 0.5s ease;
+}
+
+.icon-scaling {
+    transform-origin: center center;
+}
+
+.value {
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.68vw;
+    text-align: center;
+    width: 2.08vw;
+    letter-spacing: 0px;
+}
+
+.mic-icon {
+    position: fixed;
+    bottom: 6.48vh;
+    left: 1.82vw;
+    font-size: 0.83vw;
+    width: 3.13vw;
+    height: 1.56vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0.73vw;
+    color: white;
+    text-align: center;
+    margin-right: 0.42vw;
+    padding-left: 0.26vw;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.5s ease, bottom 0.5s ease, left 0.5s ease;
+}
+
+.dot {
+    display: inline-block;
+    width: 0.31vw;
+    height: 0.31vw;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.295);
+    margin: 0 0.10vw;
+}
+
+.dots-container {
+    transform: translate(2%, -10%);
+}
+
+.mic-icon.mic-active i {
+    color: #ffd700;
+    animation: micBounce 0.6s infinite ease-in-out;
+}
+
+@keyframes micBounce {
+    0%, 100% {
+        transform: translateY(0px);
+        color: #ffd700;
+    }
+    50% {
+        transform: translateY(-3px);
+        color: #ffed4e;
+    }
+}
+
+.mic-icon.mic-whisper .dot:nth-child(1) {
+    background-color: rgb(0, 153, 255);
+}
+
+.mic-icon.mic-normal .dot:nth-child(1),
+.mic-icon.mic-normal .dot:nth-child(2) {
+    background-color: rgb(0, 153, 255);
+}
+
+.mic-icon.mic-shouting .dot {
+    background-color: rgb(0, 153, 255);
+}
+
+
+
+#location-compass-wrapper {
+    position: absolute;   
+    bottom: 17.78vh;
+    left: -15.1vw;  
+    display: flex;
+    flex-direction: column;
+    gap: 0.31vw; 
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.bar.compass {
+    transition: transform 0.5s ease;
+}
+
+.bar.location {
+    transition: transform 0.5s ease;
+}
+
+#compass {
+    width: auto;
+    min-width: 3.65vw; 
+    height: 0.52vw;    
+    padding: 0 0.42vw; 
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.31vw;  
+    border-radius: 0.31vw; 
+    color: white;
+    font-size: 0.73vw;
+    user-select: none;
+    background-color: transparent;
+    overflow: visible;       
+    box-sizing: border-box;
+}
+
+#compass i {
+    position: relative;
+    left: 0;
+    width: 1.56vw;    
+    height: 1.56vw;   
+    border-radius: 50%;
+    background-color: rgba(36, 31, 31, 0.795);
+    border: 0.05vw solid rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 0.94vw; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-left: 0;
+    margin-bottom: 0;         
+    box-sizing: border-box;
+}
+
+#compass-direction {
+    font-family: 'Space Grotesk', sans-serif;
+    color: white;
+    font-size: 0.83vw; 
+    margin-left: 0.21vw; 
+    user-select: none;
+    line-height: 1.56vw;
+    white-space: nowrap;
+    background-color: transparent; 
+    font-weight: bold;
+}
+
+#location {
+    width: auto;  
+    height: 5.09vh; 
+    min-width: 7.81vw; 
+    padding: 0 0.42vw; 
+    display: flex;
+    align-items: center;
+    gap: 0.42vw; 
+    border-radius: 0.31vw; 
+    color: white;
+    font-size: 0.73vw; 
+    user-select: none;
+}
+
+#location i {
+    position: relative;
+    left: 0;
+    width: 1.56vw;     
+    height: 1.56vw;  
+    border-radius: 50%;
+    background-color: rgba(36, 31, 31, 0.795);
+    border: 0.05vw solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: white;
+    font-size: 0.94vw; 
+}
+
+#location-text {
+    font-family: 'Space Grotesk', sans-serif;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+    user-select: none;
+    background-color: transparent; 
+}
+
+#street-name {
+    font-weight: bold;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+#area-name {
+    font-size: 0.63vw; 
+    opacity: 0.7;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.bar.oxygen {
+    display: none;
+}
+
+@supports (filter: url('#smooth')) {
+    .icon::before {
+        filter: url('#smooth');
+    }
+}
+
+/* Car HUD Styles */
+#car-hud {
+    position: absolute;
+    bottom: 15px;
+    right: 30px;
+    color: white;
+    font-size: 14px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+#speed {
+    font-weight: bold;
+    letter-spacing: 2px;
+    display: inline-block;
+    min-width: 60px;
+    text-align: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-variant-numeric: tabular-nums;
+    font-size: 90px;
+    animation: slideInFromBottom 0.5s ease-out forwards;
+}
+
+.car-stats {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.car-stat {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: white;
+}
+
+#gear, #engine, #cruise-speed, #limiter-speed {
+    min-width: 25px;
+    text-align: center;
+}
+
+.fuel-stat .fuel-bar {
+    width: 50px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.fuel-stat .fuel-fill {
+    height: 100%;
+    background: white;
+    transition: width 0.5s ease;
+}
+
+.car-stat-icon {
+    width: 16px;
+    height: 16px;
+    color: white;
+}
+
+.car-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.car-icon-item {
+    display: flex; /* Zobrazeno ve výchozím stavu */
+    align-items: center;
+    gap: 5px;
+    color: white;
+    font-size: 14px;
+}
+
+.car-icon-svg {
+    width: 16px;
+    height: 16px;
+    color: white;
+}
+
+/* Animations */
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%) scale(0.95);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
